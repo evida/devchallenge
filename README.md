@@ -25,5 +25,5 @@ Aqui poderá alterar o nome da aplicação e outros campos tais como: autor, des
 
 O ID da aplicação está definido com o seguinte formato:
 
-http://widgets.tice.ipn.pt/<id_unico>
+`http://widgets.tice.ipn.pt/<id_unico>`,
 onde <id_unico> deverá ser substituído por uma identificação única da sua aplicação. Este id irá ser usado pela eVida para identificar a sua aplicação, que irá atribuir o seguinte url: `https://www.evida.pt/app/<id_unico>`.
