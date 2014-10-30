@@ -50,6 +50,8 @@ Neste caso, apenas nos interessa o "Consumer Key", que devemos usar para substit
   };
 ```
 
+### 3- Submeter a aplicação
+
 Após este passo, pra submeter a aplicação para o [eVida](https://www.evida.pt) há que:
 
 1. Comprimir num zip todos os ficheiros na raiz da aplicação (não a directoria em si, mas o seu conteúdo)  
