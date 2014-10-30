@@ -13,7 +13,7 @@ Recursos para o devchallenge do [eVida](https://www.evida.pt).
 ### 1- Definir id da aplicação
 
 
-As Packaged Apps precisam de ter um ficheiro config.xml configurado correctamente (de acordo com o [standard de Widgets da W3C](http://www.w3.org/TR/widgets/) , que é um ficheiro *manifest* que contém um conjunto importante de informação sobre a aplicação.
+As Packaged Apps precisam de ter um ficheiro config.xml configurado correctamente (de acordo com o [standard de Widgets 1.0 da W3C](http://www.w3.org/TR/widgets/) , que é um ficheiro *manifest* que contém um conjunto importante de informação sobre a aplicação.
 
 Aqui poderá alterar o nome da aplicação e outros campos tais como: autor, descrição, logótipo, entre outros:
 
@@ -49,3 +49,17 @@ Neste caso, apenas nos interessa o "Consumer Key", que devemos usar para substit
         ...
   };
 ```
+
+Após este passo, pra submeter a aplicação para o [eVida](https://www.evida.pt) há que:
+
+1. Comprimir num zip todos os ficheiros na raiz da aplicação (não a directoria em si, mas o seu conteúdo)  
+
+2. Alterar a extensão do ficheiro de `.zip` para `.wgt`
+
+2. change the extension from `.zip` to `.wgt`
+
+3. Ir ao eVida, aceder à área de Developer e clicar "Create an app"
+
+4. Clicar em New Packaged App
+
+5. Proceder a *upload* do ficheiro  `.wgt `
