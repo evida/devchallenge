@@ -9,9 +9,9 @@ Recursos para o devchallenge do [eVida](https://www.evida.pt).
 
 # Para testar o Hello World há que seguir os seguintes passos
 
-As Packaged Apps precisam de ter um figueiro config.xml propriamente configurado, que é um ficheiro manifest que contém um conjunto imoportante de informação sobre a aplicação.
+As Packaged Apps precisam de ter um ficheiro config.xml configurado correctamente (de acordo com o [standard de Widgets da W3C](http://www.w3.org/TR/widgets/) , que é um ficheiro *manifest* que contém um conjunto importante de informação sobre a aplicação.
 
-Aqui poderá alterar o nome da aplicação e outros campos tais como: autor, descrição, logo, entre outros:
+Aqui poderá alterar o nome da aplicação e outros campos tais como: autor, descrição, logótipo, entre outros:
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
