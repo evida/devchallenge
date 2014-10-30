@@ -1,9 +1,174 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Hello World</title>
-	</head>
-	<body>
-	Hello world!
-	</body>
-</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>OAuth 2.0 Sample App</title>
+  <meta name="author" content="IPN - Pedro Nunes Institute">
+  <meta name="description" content="This is just a simple POC">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Metadata for IE9 Pinned Sites & others -->
+  <meta name="application-name" content="Sample App" />
+  <meta name="msapplication-tooltip" content="This is just a simple POC" />
+
+  <!-- Metadata for Facebook Open Graph -->
+  <meta property="og:title" content="Sample App" />
+  <meta property="og:description" content="This is just a simple POC" />
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <link rel="stylesheet" href="https://www.evida.pt/css/apps/bootstrap.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 30px 0;
+      background: none !important;
+    }
+    body, p {
+      font-size: 16px !important;
+      line-height: 1.3em !important;
+    }
+    mark {
+      background: #f4e8b8;
+    }
+    .personal-info {
+      height: 120px;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed fermentum lorem. Vivamus ac sapien arcu. Suspendisse at malesuada libero, ac accumsan ligula. Maecenas rhoncus neque sit amet ligula vulputate tincidunt. Morbi et aliquam nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean aliquam diam libero, at ultricies arcu imperdiet ut. Ut in elit ut sapien consectetur tristique sed sed libero. Suspendisse fermentum accumsan semper. Proin eget eros id dui condimentum malesuada. Quisque felis augue, fringilla ac lorem ut, pharetra cursus justo. Nullam congue condimentum tellus quis dapibus. Phasellus a odio ut mauris dignissim elementum. Etiam in libero nunc.
+
+    <hr>
+
+    <div class="personal-info">
+      <a href="#" class="btn btn-large popup oauth">Show my personal information <small>using OAuth 2.0 Client-side Flow</small></a>
+
+      <div class="successfull-auth" style="display:none; color:grey">
+        <p>This is your personal information:</p>
+        <ul>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="https://www.evida.pt/js/apps/app-container.js"></script>
+<script>
+  //
+  //  This web application is based on the following tutorial:
+  //  https://developers.google.com/accounts/docs/OAuth2UserAgent
+  //
+
+  /* Forming the URL */
+
+  // The URL used when authenticating a user
+  // This endpoint is accessible over SSL, and HTTP connections are refused
+  var endpoint = "https://auth.evida.pt/v2/authorize/";
+
+  // Set of query string parameters supported by the Google Authorization Server
+  var qs = {
+      // JavaScript applications should use token
+      // This tells the Google Authorization Server to return the access token on the fragment
+      response_type: 'token',
+      // Indicates the client that is making the request
+      consumer_key: 'e7be30e873916c7aa8a6648c4877de',
+      // Determines where the response is sent. Must exactly match one of the values registered in the APIs Console
+      redirect_uri: 'https://' + window.location.hostname + window.location.pathname,
+      // Space delimited set of permissions the application requests
+      scope: 'user',
+  };
+
+  var url = endpoint +
+            "?scope="         + escape(qs.scope)         +
+            "&redirect_uri="  + escape(qs.redirect_uri)  +
+            "&response_type=" + escape(qs.response_type) +
+            "&client_id="     + escape(qs.consumer_key);
+
+  $('a.oauth').attr('href', "javascript:poptastic('"+ url +"')");
+
+  /* Handling the Response */
+
+  // First, parse the query string
+  var params = {}, queryString = location.hash.substring(1),
+      regex = /([^&=]+)=([^&]*)/g, m;
+  while (m = regex.exec(queryString)) {
+      params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+  }
+
+  /* Be aware! We are in the popup */
+  if (Object.keys(params).length > 0) {
+     /* Validating the Token */
+     // This step is done by Google, but not done here for now
+
+     /* Calling an API */
+     $.ajax({
+        url: "https://api.evida.pt/users?bearer_token=" + params['access_token'],
+        dataType: "jsonp",
+        success: function(data) {
+           // Return the new data to the original page
+           window.opener.commAuthComplete(data);
+
+           // Close this window
+           window.close();
+        },
+        error: function(data) {
+           if (window.console && window.console.error) console.error(data);
+        }
+     });
+  }
+
+  function poptastic(url) {
+    var pop = window.open(url, 'name', 'height=330, width=400');
+    if (window.focus) { pop.focus() }
+  }
+
+  //
+  // Render the retrieved data
+  //
+
+  function strong(str) {
+     return "<strong>" + str + "</strong>";
+  }
+
+  function li(str) {
+     return $("<li />").html(str);
+  }
+
+  function renderUserInformation(data) {
+     var $ul = $('ul');
+
+     $ul.append(li("You registered on the "+ strong(data.user.date_joined) +
+        " with the username "+ strong(data.user.username)));
+
+     dev = data.is_developer ? "" : "not ";
+     $ul.append(li("You are a "+ dev +"developer"));
+
+     admin = data.user.is_superuser ? "" : "not ";
+     staff = data.user.is_staff ?     "" : "not ";
+     $ul.append(li("You are "+ strong(admin) +
+        "an administrator and you are "+ strong(staff) +"part of the staff"));
+
+     $ul.append(li("Your email address is " + strong(data.user.email)));
+
+     $ul.append(li("Last time you logged in was at " + strong(data.user.last_login)));
+  }
+
+  function commAuthComplete(data) {
+     // Data retrieved from the User API using OAuth
+     if (window.console && window.console.log) console.log(data);
+
+     // Add user personal data to the list
+     renderUserInformation(data);
+
+     // Show the data
+     $('.oauth').hide();
+     $('.successfull-auth').slideDown();
+  }
+</script>
