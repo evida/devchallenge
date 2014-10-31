@@ -14,7 +14,7 @@ Para testar o Hello World há que seguir os seguintes passos
 ### 1- Definir id da aplicação
 
 
-As Packaged Apps precisam de ter um ficheiro config.xml configurado correctamente (de acordo com o [standard de Widgets 1.0 da W3C](http://www.w3.org/TR/widgets/) , que é um ficheiro *manifest* que contém um conjunto importante de informação sobre a aplicação.
+As Packaged Apps precisam de ter um ficheiro config.xml configurado correctamente (de acordo com o [standard de Widgets 1.0 da W3C](http://www.w3.org/TR/widgets/)), que é um ficheiro *manifest* que contém um conjunto importante de informação sobre a aplicação.
 
 Aqui poderá alterar o nome da aplicação e outros campos tais como: autor, descrição, logótipo, entre outros:
 
