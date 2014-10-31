@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" version="1.0.0"
-        id="http://widgets.tice.ipn.pt/hello-world">
+        id="http://widgets.tice.ipn.pt/<id_unico>">
    <name>Hello World</name>
    <content src="index.html" />
    <icon src="icon.jpg" />
