@@ -1,4 +1,13 @@
-Recursos para o devchallenge do [eVida](https://www.evida.pt).
+#Índice
+
+* [Recursos para o devchallenge do eVida](https://github.com/evida/devchallenge#recursos-para-o-devchallenge-do-evida).
+
+* [Instruções para o Hello World](https://github.com/evida/devchallenge#hello-world)
+
+* [Contactos](https://github.com/evida/devchallenge#hello-world)
+
+
+#Recursos para o devchallenge do [eVida](https://www.evida.pt)
 ============
 
 * [Página do concurso](https://devchallengeinfo.evida.pt)
@@ -9,7 +18,10 @@ Recursos para o devchallenge do [eVida](https://www.evida.pt).
 
 #Hello World
 
-Para testar o Hello World há que seguir os seguintes passos
+
+Requisitos: ter activado o [modo developer](https://github.com/evida/evida/wiki/Developer-guide) no eVida.
+
+Para testar o Hello World há que seguir os seguintes passos:
 
 ### 1- Definir id da aplicação
 
@@ -39,7 +51,7 @@ Para obter as informações do utilizador é necessário aceder à area "Develop
 
 Localizado na *sidebar*, e escolher "API access", ou aceder a [https://www.evida.pt/dashboard/api-access](https://www.evida.pt/dashboard/api-access). 
 
-Aí, clicando em "Create another Oauth Consumer", preenchendo e submentendo o formulário obtêm-se as chaves "Consumer Key" e "Consumer Secret"
+Aí, clicando em "Create another Oauth Consumer", preenchendo e submentendo o formulário obtêm-se as chaves "Consumer Key" e "Consumer Secret". 
 
 Neste caso, apenas nos interessa o "Consumer Key", que devemos usar para substituir <consumer_key> no ficheiro index.html 
 
@@ -66,3 +78,8 @@ Após este passo, pra submeter a aplicação para o [eVida](https://www.evida.pt
 4. Clicar em New Packaged App
 
 5. Proceder a *upload* do ficheiro  `.wgt `
+
+#Contactos
+
+* [ajuda@evida.pt](mailto:ajuda@evida.pt)
+* [Fórum de suporte](https://support.evida.pt)
