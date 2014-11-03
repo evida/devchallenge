@@ -51,7 +51,7 @@ Para obter as informações do utilizador é necessário aceder à area "Develop
 
 Localizado na *sidebar*, e escolher "API access", ou aceder a [https://www.evida.pt/dashboard/api-access](https://www.evida.pt/dashboard/api-access). 
 
-Aí, clicando em "Create another Oauth Consumer", preenchendo e submentendo o formulário obtêm-se as chaves "Consumer Key" e "Consumer Secret". 
+Aí, clicando em "Create another Oauth Consumer", preenchendo e submentendo o formulário obtêm-se as chaves "Consumer Key" e "Consumer Secret". Para o propósito do tutorial "Redirection URI" pode ficar em branco.
 
 Neste caso, apenas nos interessa o "Consumer Key", que devemos usar para substituir <consumer_key> no ficheiro index.html 
 
