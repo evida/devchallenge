@@ -8,7 +8,6 @@
 
 
 #Recursos para o devchallenge do [eVida](https://www.evida.pt)
-============
 
 * [Página do concurso](https://devchallengeinfo.evida.pt)
 
@@ -18,8 +17,8 @@
 
 * [Wiki do eVida](https://github.com/evida/evida/wiki)
 
-#Hello World
 
+#Hello World
 
 Requisitos: ter activado o [modo developer](https://github.com/evida/evida/wiki/Developer-guide) no eVida.
 
