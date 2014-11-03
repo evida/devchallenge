@@ -13,6 +13,8 @@
 * [Página do concurso](https://devchallengeinfo.evida.pt)
 
 * [Desafios propostos](https://github.com/evida/devchallenge/wiki/Desafios-propostos)
+ 
+* [Inscrições](https://docs.google.com/forms/d/1gByFJjybF86eZYdGD7ZqWhzNltFk7lpYA3EY5b02ONU/viewform)
 
 * [Wiki do eVida](https://github.com/evida/evida/wiki)
 
