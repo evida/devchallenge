@@ -4,7 +4,7 @@
 
 * [Instruções para o Hello World](https://github.com/evida/devchallenge#hello-world)
 
-* [Contactos](https://github.com/evida/devchallenge#hello-world)
+* [Contactos](https://github.com/evida/devchallenge#contactos)
 
 
 #Recursos para o devchallenge do [eVida](https://www.evida.pt)
