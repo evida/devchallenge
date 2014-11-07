@@ -6,6 +6,7 @@
 
 * [Contactos](https://github.com/evida/devchallenge#contactos)
 
+* [FAQ](https://github.com/evida/devchallenge/wiki/FAQ) do devchallenge
 
 #Recursos para o devchallenge do [eVida](https://www.evida.pt)
 
