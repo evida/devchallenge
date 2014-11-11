@@ -1,6 +1,6 @@
 #Índice
 
-* [Recursos para o devchallenge do eVida](https://github.com/evida/devchallenge#recursos-para-o-devchallenge-do-evida).
+* [Recursos para o devchallenge do eVida](https://github.com/evida/devchallenge#recursos-para-o-devchallenge-do-evida)
 
 * [Instruções para o Hello World](https://github.com/evida/devchallenge#hello-world)
 
